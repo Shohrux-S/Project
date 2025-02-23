@@ -1,194 +1,227 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Интернет-магазин</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 50px;
-        }
-        h1 {
-            font-size: 36px;
-        }
-        .btn {
-            padding: 15px 25px;
-            font-size: 18px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интернет-магазин</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .product-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .product {
+      display: inline-block;
+      width: 30%;
+      margin: 15px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      min-width: 250px;
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .product h2 {
+      font-size: 24px;
+      margin: 15px 0;
+    }
+    .product p {
+      font-size: 16px;
+      color: #555;
+    }
+    .btn-add {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn-add:hover {
+      background-color: #45a049;
+    }
+
+    #cartSection {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background-color: white;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+    }
+    .cart-item .info {
+      flex-grow: 1;
+      margin-left: 15px;
+      text-align: left;
+    }
+    .cart-item .info h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+    .cart-item .info p {
+      margin: 5px 0;
+      font-size: 16px;
+      color: #555;
+    }
+    .btn-delete {
+      padding: 5px 10px;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn-delete:hover {
+      background-color: #c0392b;
+    }
+    .btn-checkout {
+      display: block;
+      margin: 20px auto;
+      padding: 15px 30px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn {
+        padding: 15px 65px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+  </style>
 </head>
 <body>
     <h1>Добро пожаловать в наш интернет-магазин!</h1>
     <p>Нажмите на кнопку ниже, чтобы перейти в каталог товаров.</p>
     <a href="Katalog.html" class="btn">Перейти в каталог</a>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог товаров</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            font-size: 36px;
-        }
-        .product {
-            display: inline-block;
-            width: 30%;
-            margin: 15px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .product img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        .product h2 {
-            font-size: 24px;
-            margin: 15px 0;
-        }
-        .product p {
-            font-size: 16px;
-            color: #555;
-        }
-        .btn-add {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        .product-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-    </style>
-</head>
-<body>
-    <h1>Наши товары в распродаже</h1>
-    <div class="product-container">
-        <div class="product">
-            <img src="i.jpg" alt="Товар 1">
-            <h2>Товар 1</h2>
-            <p>Просто кроссовка</p>
-            <p><strong>Цена: 1000 ₽</strong></p>
-            <button class="btn-add">Добавить в корзину</button>
-        </div>
-        <div class="product">
-            <img src="asa.jpg" alt="Товар 2">
-            <h2>Товар 2</h2>
-            <p>Просто футболка</p>
-            <p><strong>Цена: ₽</strong></p>
-            <button class="btn-add">Добавить в корзину</button>
-        </div>
-        <div class="product">
-            <img src="www.jpg" alt="Товар 3">
-            <h2>Товар 3</h2>
-            <p>Просто кепка</p>
-            <p><strong>Цена: 1500 ₽</strong></p>
-            <button class="btn-add">Добавить в корзину</button>
-        </div>
+  <h1>Наши товары в распродаже</h1>
+  <div class="product-container">
+    <div class="product" data-id="1" data-name="Товар 1" data-price="1000">
+      <img src="i.jpg" alt="Товар 1">
+      <h2>Товар 1</h2>
+      <p>Просто кроссовка</p>
+      <p><strong>Цена: 1000 ₽</strong></p>
+      <button class="btn-add" onclick="addToCart(this)">Добавить в корзину</button>
     </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Корзина</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            text-align: center;
-            font-size: 36px;
-        }
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            background-color: white;
-            margin: 10px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .cart-item img {
-            width: 80px;
-            height: 80px;
-            border-radius: 8px;
-        }
-        .cart-item .info {
-            flex-grow: 1;
-            margin-left: 15px;
-        }
-        .btn-checkout {
-            display: block;
-            margin: 20px auto;
-            padding: 15px 30px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            text-align: center;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h1>Корзина</h1>
-    <div class="cart-item">
-        <img src="product1.jpg" alt="Товар 1">
-        <div class="info">
-            <h3>Товар 1</h3>
-            <p>Цена: 1000 ₽</p>
-        </div>
-        <button>Удалить</button>
+    <div class="product" data-id="2" data-name="Товар 2" data-price="2000">
+      <img src="asa.jpg" alt="Товар 2">
+      <h2>Товар 2</h2>
+      <p>Просто футболка</p>
+      <p><strong>Цена: 2000 ₽</strong></p>
+      <button class="btn-add" onclick="addToCart(this)">Добавить в корзину</button>
     </div>
-    <div class="cart-item">
-        <img src="product2.jpg" alt="Товар 2">
-        <div class="info">
-            <h3>Товар 2</h3>
-            <p>Цена: 2000 ₽</p>
-        </div>
-        <button>Удалить</button>
+    <div class="product" data-id="3" data-name="Товар 3" data-price="1500">
+      <img src="www.jpg" alt="Товар 3">
+      <h2>Товар 3</h2>
+      <p>Просто кепка</p>
+      <p><strong>Цена: 1500 ₽</strong></p>
+      <button class="btn-add" onclick="addToCart(this)">Добавить в корзину</button>
     </div>
-    <div class="cart-item">
-        <img src="product3.jpg" alt="Товар 3">
-        <div class="info">
-            <h3>Товар 3</h3>
-            <p>Цена: 1500 ₽</p>
-        </div>
-        <button>Удалить</button>
-    </div>
+  </div>
+
+  <h1>Корзина</h1>
+  <div id="cartSection">
+    <div id="cartItems"></div>
     <a href="checkout.html" class="btn-checkout">Перейти к оформлению заказа</a>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    function addToCart(button) {
+      const productDiv = button.parentElement;
+      const id = productDiv.getAttribute('data-id');
+      const name = productDiv.getAttribute('data-name');
+      const price = parseFloat(productDiv.getAttribute('data-price'));
+
+      if (cart[id]) {
+        cart[id].quantity += 1;
+      } else {
+        cart[id] = { id, name, price, quantity: 1 };
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartDisplay();
+      alert(name + " добавлен в корзину!");
+    }
+
+    function removeFromCart(id) {
+      delete cart[id];
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+      const cartItemsDiv = document.getElementById('cartItems');
+      cartItemsDiv.innerHTML = '';
+
+      if (Object.keys(cart).length === 0) {
+        cartItemsDiv.innerHTML = '<p>Ваша корзина пуста.</p>';
+        return;
+      }
+
+      for (const id in cart) {
+        if (cart.hasOwnProperty(id)) {
+          const item = cart[id];
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'cart-item';
+          itemDiv.innerHTML = `
+            <img src="product${id}.jpg" alt="${item.name}">
+            <div class="info">
+              <h3>${item.name}</h3>
+              <p>Цена: ${item.price} ₽</p>
+              <p>Количество: ${item.quantity}</p>
+            </div>
+            <button class="btn-delete" onclick="removeFromCart('${id}')">Удалить</button>
+          `;
+          cartItemsDiv.appendChild(itemDiv);
+        }
+      }
+    }
+
+    updateCartDisplay();
+  </script>
 </body>
 </html>

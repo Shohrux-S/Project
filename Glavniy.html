@@ -1,54 +1,152 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация для Install_zone</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      background: #fff;
+      margin: 50px auto;
+      padding: 30px;
+      border: 5px solid #000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p.description {
+      text-align: center;
+      font-size: 16px;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+    legend {
+      padding: 0 10px;
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .required {
+      color: red;
+    }
+    .checkbox-group label {
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 15px;
+    }
+    .button-container {
+      text-align: center;
+    }
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
-<style>
-    .m{
-    color: red;
-}
-.as{
-    border-top: solid black 5px;
-    border-right: solid black 5px;
-    border-bottom: solid black 5px;
-    height: 600px;
-    width: 580px;
-}
-a{
-    text-decoration: none;
-}
-</style>
 <body>
-    <center><div class="as">
+  <div class="container">
     <h1>Регистрация для сайта Install_zone</h1>
-    <h7><p>Пожалуйста, заполните форму. Обязательные поля отмечены <h7 class="m">* </h7></p></h7>
-    <form class="a">
-        <fieldset>
-            <legend>Контактная информация</legend>
-        Имя<h7 class="m">*</h7> <input type="text" name="firstname"/></br>
-        Телефон<input type="text" name="centername"></br>
-        Email<h7 class="m">*</h7><input type="text" name="lastname"></br>
-    </fieldset>
+    <p class="description">
+      Пожалуйста, заполните форму. Обязательные поля отмечены <span class="required">*</span>
+    </p>
+    <form id="registrationForm" action="Install_zone.html" method="post">
+      <fieldset>
+        <legend>Контактная информация</legend>
+        <label>
+          Имя <span class="required">*</span>
+          <input type="text" name="firstname" id="firstname" required>
+        </label>
+        <label>
+          Телефон
+          <input type="tel" name="phone" id="phone">
+        </label>
+        <label>
+          Email <span class="required">*</span>
+          <input type="email" name="email" id="email" required>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Личная информация</legend>
+        <label>
+          Возраст <span class="required">*</span>
+          <input type="number" name="age" id="age" required min="0">
+        </label>
+        <label>
+          Пол: <span class="required">*</span><br>
+          <input type="radio" name="gender" value="m" required> Мужчина
+          <input type="radio" name="gender" value="f" required> Женщина
+        </label>
+        <label>
+          Дополнительная информация (необязательно)
+          <input type="text" name="additionalInfo" id="additionalInfo">
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Выберите ваши любимые программы!</legend>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="programs" value="Adobe Photoshop"> Adobe Photoshop</label>
+          <label><input type="checkbox" name="programs" value="C++"> C++</label>
+          <label><input type="checkbox" name="programs" value="Adobe Illustrator"> Adobe Illustrator</label>
+          <label><input type="checkbox" name="programs" value="Arduino"> Arduino</label>
+          <label><input type="checkbox" name="programs" value="Html/Css"> Html/Css</label>
+          <label><input type="checkbox" name="programs" value="Sketch Up"> Sketch Up</label>
+          <label><input type="checkbox" name="programs" value="Hardware"> Hardware</label>
+          <label><input type="checkbox" name="programs" value="Java Script"> Java Script</label>
+          <label><input type="checkbox" name="programs" value="Excel"> Excel</label>
+        </div>
+      </fieldset>
+      <div class="button-container">
+        <button type="submit">Регистрация</button>
+      </div>
     </form>
-    <form class="a">
-        <fieldset>
-            <legend>Личная информация</legend>
-        Возраст<h7 class="m">*</h7><input type="text" name="firstname"/></br>
-        Пол<input type="radio" name="s" value="m"/>Мужчина<input type="radio" name="s" value="f"/>Женщина</br>
-        <p>Введите</p><p>свою</p><p>информацию</p><p>(Необязательно)</p> <input type="text" name="centername"></br>
-    </fieldset>
-    </form>
-    <form class="a">
-        <fieldset>
-            <legend>Выберите ваши любимые программы!</legend>
-            <input type="checkbox">Adobe Photoshop<input type="checkbox">C++<input type="checkbox">Adobe Illustrator<input type="checkbox">Arduino</br>
-            <input type="checkbox">Html/Css<input type="checkbox">Sketch Up<input type="checkbox">Hardware<input type="checkbox">Java Script<input type="checkbox">Excel
-    </fieldset>
-    </form>
-    <a href="Install_zone.html"><button>Регистрация</button></a>
-</div>
-</center>
+  </div>
+  
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      var firstname = document.getElementById("firstname").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var age = document.getElementById("age").value.trim();
+      var genderChecked = document.querySelector('input[name="gender"]:checked');
+
+      if (!firstname || !email || !age || !genderChecked) {
+        e.preventDefault();
+        alert("Пожалуйста, заполните все обязательные поля.");
+      }
+    });
+  </script>
 </body>
 </html>
